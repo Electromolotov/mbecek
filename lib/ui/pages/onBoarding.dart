@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mbecek/ui/pages/sign.dart';
-import 'package:mbecek/ui/pages/weddingCreation.dart';
+import 'package:get/get.dart';
+import 'package:mbecek/ui/pages/webViewHome.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({Key? key}) : super(key: key);
@@ -73,15 +73,12 @@ class _OnBoardingState extends State<OnBoarding> {
                   width: MediaQuery.of(context).size.width - 30,
                   color: Colors.blue,
                   child: InkWell(
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const MarriageCreation(),
-                      ),
-                    ),
+                    onTap: () {
+                      Get.off(() => WebViewHome());
+                    },
                     child: const Center(
                       child: Text(
-                        'CREATE AN EVENT',
+                        'Buat Undangan',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -91,49 +88,51 @@ class _OnBoardingState extends State<OnBoarding> {
                   ),
                 ),
               ),
-              Positioned(
-                top: 540,
-                child: Container(
-                  height: 50,
-                  width: MediaQuery.of(context).size.width - 30,
-                  color: Colors.blue,
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Center(
-                      child: Text(
-                        'JOIN AN EVENT',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 610,
-                child: Row(
-                  children: [
-                    const Text("Already have and account?"),
-                    InkWell(
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Sign(),
-                        ),
-                      ),
-                      child: const Text(
-                        "Log in",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          decoration: TextDecoration.underline,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // Positioned(
+              //   top: 540,
+              //   child: Container(
+              //     height: 50,
+              //     width: MediaQuery.of(context).size.width - 30,
+              //     color: Colors.blue,
+              //     child: InkWell(
+              //       onTap: () {
+              //         Get.off(() => VerifyJoinEvent());
+              //       },
+              //       child: const Center(
+              //         child: Text(
+              //           'Login',
+              //           style: TextStyle(
+              //             color: Colors.white,
+              //             fontWeight: FontWeight.bold,
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // Positioned(
+              //   top: 610,
+              //   child: Row(
+              //     children: [
+              //       const Text("Don't have account?"),
+              //       InkWell(
+              //         onTap: () => Navigator.push(
+              //           context,
+              //           MaterialPageRoute(
+              //             builder: (context) => const Sign(),
+              //           ),
+              //         ),
+              //         child: const Text(
+              //           " Sign Up",
+              //           style: TextStyle(
+              //             fontWeight: FontWeight.w700,
+              //             decoration: TextDecoration.underline,
+              //           ),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),

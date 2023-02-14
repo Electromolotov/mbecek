@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mbecek/ui/pages/onBoarding.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Mbecek',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -21,11 +22,11 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
         splashIconSize: 800,
         duration: 750, //000,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
         splashTransition: SplashTransition.fadeTransition,
         animationDuration: const Duration(milliseconds: 1750),
         splash: Container(
-          color: Colors.blue,
+          color: Colors.white,
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               const Text(
-                "Event Planning",
+                "Undangan Online",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
               ),
             ],
